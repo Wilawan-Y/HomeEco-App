@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบทดสอบการดูแลรักษาเสื้อผ้าและอุปกรณ์ภายในบ้าน</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <div class="card">
+                <h1>🏠 วิชาการงานอาชีพ</h1>
+                <h2>เรื่อง การดูแลรักษาเสื้อผ้าและอุปกรณ์ภายในบ้าน</h2>
+                <p>กรุณากรอกชื่อของคุณเพื่อเริ่มทำแบบทดสอบ</p>
+                <input type="text" id="student-name" placeholder="ชื่อ-นามสกุล ของคุณ..." autocomplete="off">
+                <button id="start-btn" class="btn-primary">เริ่มบทเรียน 🚀</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <header>
+                <div class="user-info">👤 ผู้เรียน: <span id="display-name">Guest</span></div>
+                <div class="progress-info">ข้อที่ <span id="current-q">1</span> / 20</div>
+            </header>
+
+            <div class="main-layout">
+                <section class="quiz-area">
+                    <div class="question-box">
+                        <h3 id="question-text">คำถามจะปรากฏที่นี่...</h3>
+                    </div>
+                    
+                    <div id="options-container" class="options-grid">
+                        </div>
+
+                    <button id="submit-btn" class="btn-submit" disabled>ยืนยันคำตอบ</button>
+
+                    <div id="hint-box" class="hint-box hidden">
+                        💡 <strong>คำแนะนำ:</strong> <span id="hint-text"></span>
+                    </div>
+                </section>
+
+                <button id="toggle-content-btn" class="floating-btn">📖 ดูเนื้อหา</button>
+
+                <aside id="content-sidebar" class="sidebar hidden">
+                    <div class="sidebar-header">
+                        <h3>📚 เนื้อหาบทเรียน</h3>
+                        <button id="close-content-btn">✕</button>
+                    </div>
+                    <div class="sidebar-content">
+                        <h4>1. การดูแลเสื้อผ้า</h4>
+                        <p>ควรแยกผ้าสีและผ้าขาวก่อนซัก ตรวจสอบป้ายสัญลักษณ์ (Care Label) เสมอ การขจัดรอยเปื้อนควรทำทันทีที่เปื้อน</p>
+                        
+                        <h4>2. การรีดผ้า</h4>
+                        <p>พรมน้ำให้ทั่วก่อนรีด ปรับความร้อนให้เหมาะกับชนิดผ้า (ผ้าฝ้ายใช้ไฟแรง ผ้าไหมใช้ไฟอ่อน) และควรรีดผ้าที่ใช้ไฟอ่อนก่อน</p>
+
+                        <h4>3. อุปกรณ์ไฟฟ้า</h4>
+                        <p>หม้อหุงข้าว: อย่าใช้ฝอยขัดหม้อขัดหม้อชั้นใน<br>
+                        ตู้เย็น: ห้ามใช้ของมีคมงัดน้ำแข็ง<br>
+                        เตารีด: ถอดปลั๊กทุกครั้งเมื่อเลิกใช้งาน</p>
+                        
+                        <h4>4. การจัดเก็บ</h4>
+                        <p>ควรเก็บเสื้อผ้าในที่แห้ง ไม่อับชื้น เสื้อผ้าที่ยับง่ายควรใส่ไม้แขวน</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="card">
+                <h1>🎉 จบบทเรียนแล้ว!</h1>
+                <div class="score-circle">
+                    <span id="score-percent">0%</span>
+                </div>
+                <p>คุณ <strong id="result-name"></strong> ทำคะแนนได้</p>
+                <h2 id="score-text">0 / 20 คะแนน</h2>
+                <div id="feedback-msg"></div>
+                <button id="restart-btn" class="btn-primary">กลับไปหน้าแรก 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
